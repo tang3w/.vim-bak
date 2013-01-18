@@ -84,6 +84,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
 
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/taglist.vim'
@@ -93,4 +94,12 @@ filetype plugin indent on
 
 " [[[ Taglist
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+" ]]]
+
+" [[[ Neocomplcache
+" Launches neocomplcache automatically
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase
+let g:neocomplcache_enable_smart_case = 1
+
 " ]]]
