@@ -32,6 +32,7 @@ set cinoptions=(sus " Options of c/c++ indent style
 syntax on
 colorscheme wombat256
 colorscheme jellybeans
+colorscheme desert256
 set guifont=Menlo\ Regular:h16
 " ]]]
 
