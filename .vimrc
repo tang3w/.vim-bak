@@ -59,7 +59,7 @@ set whichwrap=b,s,<,>,[,]
 " ]]]
 
 " File type
-filetype on
+filetype off
 
 " [[[ Line number and background
 set number
@@ -79,6 +79,7 @@ let mapleader = "\t"
 " [[[ Neobundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+='~/.vim/bundle/sparkup/vim/'
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
@@ -104,6 +105,8 @@ NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/snipmate-snippets'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'jsedivy/vim-sparkup'
 
 filetype plugin indent on
 " ]]]
@@ -154,6 +157,13 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 autocmd Syntax * RainbowParenthesesLoadChevrons
+" ]]]
+ 
+" [[[ Sparkup
+let g:sparkupExecuteMapping = '<C-e>'
+
+if has('vim_starting')
+endif
 " ]]]
 
 " [[[ Key mapping
