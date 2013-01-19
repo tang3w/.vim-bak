@@ -107,6 +107,8 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/snipmate-snippets'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'jsedivy/vim-sparkup'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'nvie/vim-flake8'
 
 filetype plugin indent on
 " ]]]

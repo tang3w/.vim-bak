@@ -48,3 +48,16 @@ After installation, you should modify
 the s:ctags_path variable in .vimrc
 
     let s:ctags_path = '/usr/local/bin/ctags'
+
+### 2\. Flake8
+Flake8 is a wrapper around PyFlakes, pep8.
+It is the dependece of vim-flake8 plugin.
+
+You can download it from
+[flake8](http://pypi.python.org/pypi/flake8/ "flake8").
+
+After download the latest version,
+extract the tarball and then install:
+
+    sudo python setup.py install
+
