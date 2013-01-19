@@ -14,6 +14,7 @@ home directory:
 
 Then, initiate submodule(neobundle):
 
+    cd ~/.vim
     git submodule init
     git submodule update
 

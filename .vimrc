@@ -100,6 +100,10 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'vim-scripts/Gundo'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'MarcWeber/vim-addon-mw-utils'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'honza/snipmate-snippets'
 
 filetype plugin indent on
 " ]]]
