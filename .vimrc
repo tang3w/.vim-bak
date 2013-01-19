@@ -72,6 +72,10 @@ autocmd Filetype lua setlocal comments-=:-- comments+=f:--
 autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
 " ]]]
 
+" [[[ Leader
+let mapleader = "\t"
+" ]]]
+
 " [[[ Neobundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -85,17 +89,25 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
-
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/taglist.vim'
-
+NeoBundle 'vim-scripts/bufexplorer.zip'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tmhedberg/matchit'
+NeoBundle 'vim-scripts/Gundo'
 
 filetype plugin indent on
 " ]]]
 
 " [[[ Taglist
 let Tlist_Ctags_Cmd = s:ctags_path
+let Tlist_Auto_Open = 1 
+let Tlist_Exit_OnlyWindow = 1 
+let Tlist_Use_Right_Window = 1
 " ]]]
 
 " [[[ Neocomplcache
@@ -103,4 +115,20 @@ let Tlist_Ctags_Cmd = s:ctags_path
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase
 let g:neocomplcache_enable_smart_case = 1
+" ]]]
+
+" [[[ Nerdtree tabs
+let g:nerdtree_tabs_open_on_console_startup = 1
+" ]]]
+
+" [[[ Key mapping
+map <leader>h :wincmd h<CR>
+map <leader>j :wincmd j<CR>
+map <leader>k :wincmd k<CR>
+map <leader>l :wincmd l<CR>
+
+map <leader><Left>  :wincmd h<CR>
+map <leader><Down>  :wincmd j<CR>
+map <leader><Up>    :wincmd k<CR>
+map <leader><Right> :wincmd l<CR>
 " ]]]
