@@ -12,6 +12,11 @@ home directory:
     cd ~
     git clone git@github.com:tang3w/.vim.git
 
+Then, initiate submodule(neobundle):
+
+    git submodule init
+    git submodule update
+
 Then, move/link the .vimrc file
 to your home directory:
 
@@ -38,7 +43,7 @@ You can download ctags from
 What's more, you should tell the plug-ins
 dependent of ctags where it is installed.
 
-For taglist, you should set Tlist_Ctags_Cmd variable:
+After installation, you should modify
+the s:ctags_path variable in .vimrc
 
-    set Tlist_Ctags_Cmd='/path/to/ctags'
-
+    let s:ctags_path = '/usr/local/bin/ctags'

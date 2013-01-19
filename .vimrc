@@ -3,13 +3,18 @@
 
 " !!! Please move/link this file to your home directory.
 
-" No compatible
+" [[[ Variables
+let s:ctags_path = '/usr/local/bin/ctags'
+" ]]]
+
+" Be IMproved
 set nocompatible
 
 " [[[ Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,gb18030,cp936 " ucs-bom means utf-8 without bom
+" ucs-bom means utf-8 without bom
+set fileencodings=ucs-bom,utf-8,gb18030,cp936
 set langmenu=zh_CN.UTF-8
 " ]]]
 
@@ -19,19 +24,19 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set ambiwidth=double " Display the 2-bytes character
+" Display the 2-bytes character
+set ambiwidth=double
 " ]]]
 
 " [[[ Indent
 set cindent
 set autoindent
-set cinoptions=(sus " Options of c/c++ indent style
+" C/C++ indent style
+set cinoptions=(sus
 " ]]]
 
 " [[[ Highlight
 syntax on
-colorscheme wombat256
-colorscheme jellybeans
 colorscheme desert256
 set guifont=Menlo\ Regular:h16
 " ]]]
@@ -67,11 +72,6 @@ autocmd Filetype lua setlocal comments-=:-- comments+=f:--
 autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
 " ]]]
 
-" [[[ Key mapping
-nmap - <C-B>
-nmap = <C-F>
-" ]]]
-
 " [[[ Neobundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -89,11 +89,13 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/taglist.vim'
 
+NeoBundle 'kien/ctrlp.vim'
+
 filetype plugin indent on
 " ]]]
 
 " [[[ Taglist
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+let Tlist_Ctags_Cmd = s:ctags_path
 " ]]]
 
 " [[[ Neocomplcache
@@ -101,5 +103,4 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase
 let g:neocomplcache_enable_smart_case = 1
-
 " ]]]
