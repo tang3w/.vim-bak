@@ -99,6 +99,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tmhedberg/matchit'
 NeoBundle 'vim-scripts/Gundo'
+NeoBundle 'kien/rainbow_parentheses.vim'
 
 filetype plugin indent on
 " ]]]
@@ -121,14 +122,44 @@ let g:neocomplcache_enable_smart_case = 1
 let g:nerdtree_tabs_open_on_console_startup = 1
 " ]]]
 
-" [[[ Key mapping
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
+" [[[ Rainbow parentheses
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
 
-map <leader><Left>  :wincmd h<CR>
-map <leader><Down>  :wincmd j<CR>
-map <leader><Up>    :wincmd k<CR>
-map <leader><Right> :wincmd l<CR>
+let g:rbpt_max = 16
+
+autocmd VimEnter * RainbowParenthesesToggle
+
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+autocmd Syntax * RainbowParenthesesLoadChevrons
+" ]]]
+
+" [[[ Key mapping
+map <leader>h <C-w>h 
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 " ]]]
