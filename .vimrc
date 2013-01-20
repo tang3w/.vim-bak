@@ -175,6 +175,11 @@ map <leader>j <C-w>j
 map <leader>k <C-w>k
 map <leader>l <C-w>l
 
+map <leader><Left>  <C-w>h
+map <leader><Down>  <C-w>j
+map <leader><Up>    <C-w>k
+map <leader><Right> <C-w>l
+
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
