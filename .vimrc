@@ -109,13 +109,13 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'jsedivy/vim-sparkup'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
+NeoBundle 'vim-scripts/Pydiction'
 
 filetype plugin indent on
 " ]]]
 
 " [[[ Taglist
 let Tlist_Ctags_Cmd = s:ctags_path
-let Tlist_Auto_Open = 1 
 let Tlist_Exit_OnlyWindow = 1 
 let Tlist_Use_Right_Window = 1
 " ]]]
@@ -125,10 +125,6 @@ let Tlist_Use_Right_Window = 1
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase
 let g:neocomplcache_enable_smart_case = 1
-" ]]]
-
-" [[[ Nerdtree tabs
-let g:nerdtree_tabs_open_on_console_startup = 1
 " ]]]
 
 " [[[ Rainbow parentheses
@@ -163,9 +159,14 @@ autocmd Syntax * RainbowParenthesesLoadChevrons
  
 " [[[ Sparkup
 let g:sparkupExecuteMapping = '<C-e>'
+" ]]]
 
-if has('vim_starting')
-endif
+" [[[ Flake8
+autocmd FileType python map <buffer> <C-f> :call Flake8()<CR>
+" ]]]
+
+" [[[ Pydiction
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 " ]]]
 
 " [[[ Key mapping
@@ -178,4 +179,10 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <F2> :NERDTreeToggle<CR> 
+map <F3> :TlistToggle<CR>
+map <F4> :BufExplorer<CR>
+map <F5> :CtrlP<CR>
+map <F6> :GundoToggle<CR>
 " ]]]
