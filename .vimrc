@@ -110,6 +110,8 @@ NeoBundle 'jsedivy/vim-sparkup'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-scripts/Pydiction'
+NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'vim-scripts/YankRing.vim'
 
 filetype plugin indent on
 " ]]]
