@@ -194,6 +194,8 @@ map <F6> :GundoToggle<CR>
 " Flake8
 autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 
-nmap < <C-B>
-nmap > <C-F>
+nmap - <C-b>
+nmap = <C-f>
+
+nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " ]]]
