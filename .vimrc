@@ -5,6 +5,7 @@
 
 " [[[ Variables
 let s:ctags_path = '/usr/local/bin/ctags'
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 " ]]]
 
 " Be IMproved
@@ -49,7 +50,8 @@ set ruler
 
 " [[[ Search rules
 set is
-set nohls
+set hls
+set ignorecase
 " ]]]
 
 " [[[ Wrap and break
@@ -73,7 +75,7 @@ autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
 " ]]]
 
 " [[[ Leader
-let mapleader = "\t"
+let mapleader = "\\"
 " ]]]
 
 " [[[ Neobundle
@@ -110,8 +112,9 @@ NeoBundle 'jsedivy/vim-sparkup'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-scripts/Pydiction'
-NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'derekwyatt/vim-fswitch'
 NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'vim-scripts/highlight.vim'
 
 filetype plugin indent on
 " ]]]
@@ -163,14 +166,6 @@ autocmd Syntax * RainbowParenthesesLoadChevrons
 let g:sparkupExecuteMapping = '<C-e>'
 " ]]]
 
-" [[[ Flake8
-autocmd FileType python map <buffer> <C-f> :call Flake8()<CR>
-" ]]]
-
-" [[[ Pydiction
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-" ]]]
-
 " [[[ Key mapping
 map <leader>h <C-w>h 
 map <leader>j <C-w>j
@@ -192,4 +187,10 @@ map <F3> :TlistToggle<CR>
 map <F4> :BufExplorer<CR>
 map <F5> :CtrlP<CR>
 map <F6> :GundoToggle<CR>
+
+" Flake8
+autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
+
+nmap < <C-B>
+nmap > <C-F>
 " ]]]
