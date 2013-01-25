@@ -115,6 +115,7 @@ NeoBundle 'vim-scripts/Pydiction'
 NeoBundle 'derekwyatt/vim-fswitch'
 NeoBundle 'vim-scripts/YankRing.vim'
 NeoBundle 'vim-scripts/highlight.vim'
+NeoBundle 'kshenoy/vim-signature'
 
 filetype plugin indent on
 " ]]]
