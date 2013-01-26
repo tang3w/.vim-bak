@@ -118,6 +118,7 @@ NeoBundle 'vim-scripts/highlight.vim'
 NeoBundle 'kshenoy/vim-signature'
 NeoBundle 'embear/vim-foldsearch'
 NeoBundle 'fs111/pydoc.vim'
+NeoBundle 'vim-scripts/MarkLines'
 
 filetype plugin indent on
 " ]]]
