@@ -120,6 +120,7 @@ NeoBundle 'embear/vim-foldsearch'
 NeoBundle 'fs111/pydoc.vim'
 NeoBundle 'vim-scripts/MarkLines'
 NeoBundle 'tang3w/python_ifold'
+NeoBundle 'vim-scripts/simplefold'
 
 filetype plugin indent on
 " ]]]
