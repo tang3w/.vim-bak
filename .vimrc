@@ -203,4 +203,6 @@ nmap - <C-b>
 nmap = <C-f>
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
+
+nmap <Leader>mru :MRU<CR>
 " ]]]
