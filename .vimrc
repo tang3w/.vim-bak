@@ -75,7 +75,7 @@ autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
 " ]]]
 
 " [[[ Leader
-let mapleader = "\\"
+let mapleader = "l"
 " ]]]
 
 " [[[ Neobundle
@@ -174,6 +174,10 @@ let g:sparkupExecuteMapping = '<C-e>'
 " ]]]
 
 " [[[ Key mapping
+
+" Timeout length
+set timeoutlen=750
+
 map <leader>h <C-w>h 
 map <leader>j <C-w>j
 map <leader>k <C-w>k
@@ -189,12 +193,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-map <F2> :NERDTreeToggle<CR> 
-map <F3> :TlistToggle<CR>
-map <F4> :BufExplorer<CR>
-map <F5> :CtrlP<CR>
-map <F6> :GundoToggle<CR>
-
 " Flake8
 autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 
@@ -203,5 +201,10 @@ nmap = <C-f>
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-nmap <Leader>mru :MRU<CR>
+map <Leader>mru :MRU<CR>
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>t :TlistToggle<CR>
+map <Leader>s :CtrlP<CR>
+map <Leader>be :BufExplorer<CR>
+map <Leader>g :GundoToggle<CR>
 " ]]]
