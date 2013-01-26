@@ -121,6 +121,8 @@ NeoBundle 'fs111/pydoc.vim'
 NeoBundle 'vim-scripts/MarkLines'
 NeoBundle 'tang3w/python_ifold'
 NeoBundle 'vim-scripts/simplefold'
+NeoBundle 'vim-scripts/EasyGrep'
+NeoBundle 'vim-scripts/mru.vim'
 
 filetype plugin indent on
 " ]]]
