@@ -80,49 +80,48 @@ let mapleader = "\\"
 
 " [[[ Neobundle
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    set runtimepath+=~/.vim/bundle/vundle/
     set runtimepath+='~/.vim/bundle/sparkup/vim/'
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call vundle#rc()
 
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
 
-" Recommended to install
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'vim-scripts/bufexplorer.zip'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tmhedberg/matchit'
-NeoBundle 'vim-scripts/Gundo'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'
-NeoBundle 'tomtom/tlib_vim'
-NeoBundle 'garbas/vim-snipmate'
-NeoBundle 'honza/snipmate-snippets'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'jsedivy/vim-sparkup'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'nvie/vim-flake8'
-NeoBundle 'vim-scripts/Pydiction'
-NeoBundle 'derekwyatt/vim-fswitch'
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'vim-scripts/highlight.vim'
-NeoBundle 'kshenoy/vim-signature'
-NeoBundle 'embear/vim-foldsearch'
-NeoBundle 'fs111/pydoc.vim'
-NeoBundle 'vim-scripts/MarkLines'
-NeoBundle 'tang3w/python_ifold'
-NeoBundle 'vim-scripts/simplefold'
-NeoBundle 'vim-scripts/EasyGrep'
-NeoBundle 'vim-scripts/mru.vim'
+" Bundles
+Bundle 'Shougo/neocomplcache'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
+Bundle 'tmhedberg/matchit'
+Bundle 'vim-scripts/Gundo'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/snipmate-snippets'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'jsedivy/vim-sparkup'
+Bundle 'scrooloose/syntastic'
+Bundle 'nvie/vim-flake8'
+Bundle 'vim-scripts/Pydiction'
+Bundle 'derekwyatt/vim-fswitch'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'vim-scripts/highlight.vim'
+Bundle 'kshenoy/vim-signature'
+Bundle 'embear/vim-foldsearch'
+Bundle 'fs111/pydoc.vim'
+Bundle 'vim-scripts/MarkLines'
+Bundle 'tang3w/python_ifold'
+Bundle 'vim-scripts/simplefold'
+Bundle 'vim-scripts/EasyGrep'
+Bundle 'vim-scripts/mru.vim'
 
 filetype plugin indent on
 " ]]]
