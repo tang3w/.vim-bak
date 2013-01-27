@@ -41,6 +41,8 @@ syntax on
 set guifont=Monaco:h16
 set cursorcolumn
 set cursorline
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
 " ]]]
 
 " Backspace
@@ -210,6 +212,7 @@ map ff <Leader><Leader>f
 map FF <Leader><Leader>F
 map ww <Leader><Leader>w
 map // <Leader>c<Space>
+map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>t :TlistToggle<CR>
