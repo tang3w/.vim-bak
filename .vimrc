@@ -38,7 +38,9 @@ set cinoptions=(sus
 
 " [[[ Highlight
 syntax on
-set guifont=Menlo\ Regular:h16
+set guifont=Monaco:h16
+set cursorcolumn
+set cursorline
 " ]]]
 
 " Backspace
@@ -216,6 +218,7 @@ map <Leader>be :BufExplorer<CR>
 map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
+map <Leader>p %
 map <Enter> o
 map ;; $
 map ; ^
