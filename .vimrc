@@ -38,7 +38,6 @@ set cinoptions=(sus
 
 " [[[ Highlight
 syntax on
-colorscheme desert256
 set guifont=Menlo\ Regular:h16
 " ]]]
 
@@ -94,7 +93,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
+Bundle 'tang3w/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'Lokaltog/vim-easymotion'
@@ -112,7 +111,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nvie/vim-flake8'
 Bundle 'vim-scripts/Pydiction'
 Bundle 'derekwyatt/vim-fswitch'
-Bundle 'vim-scripts/YankRing.vim'
+Bundle 'tang3w/YankRing.vim'
 Bundle 'vim-scripts/highlight.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'embear/vim-foldsearch'
@@ -122,6 +121,7 @@ Bundle 'tang3w/python_ifold'
 Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
+Bundle 'davidhalter/jedi-vim'
 
 filetype plugin indent on
 " ]]]
@@ -130,6 +130,10 @@ filetype plugin indent on
 let Tlist_Ctags_Cmd = s:ctags_path
 let Tlist_Exit_OnlyWindow = 1 
 let Tlist_Use_Right_Window = 1
+" ]]]
+
+" [[[ CtrlP
+let g:ctrlp_show_hidden = 1
 " ]]]
 
 " [[[ Neocomplcache
@@ -173,20 +177,17 @@ autocmd Syntax * RainbowParenthesesLoadChevrons
 let g:sparkupExecuteMapping = '<C-e>'
 " ]]]
 
+colorscheme desert256
+
 " [[[ Key mapping
 
 " Timeout length
-set timeoutlen=750
+set timeoutlen=256
 
-map <leader>h <C-w>h 
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <leader>l <C-w>l
-
-map <leader><Left>  <C-w>h
-map <leader><Down>  <C-w>j
-map <leader><Up>    <C-w>k
-map <leader><Right> <C-w>l
+map <Leader>h <C-w>h 
+map <Leader>j <C-w>j
+map <Leader>k <C-w>k
+map <Leader>l <C-w>l
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -201,10 +202,21 @@ nmap = <C-f>
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-map <Leader>mru :MRU<CR>
+map jj <Leader><Leader>j
+map kk <Leader><Leader>k
+map ff <Leader><Leader>f
+map FF <Leader><Leader>F
+map ww <Leader><Leader>w
+map // <Leader>c<Space>
+map <Leader>r :MRU<CR>
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>t :TlistToggle<CR>
 map <Leader>s :CtrlP<CR>
 map <Leader>be :BufExplorer<CR>
-map <Leader>g :GundoToggle<CR>
+map <Leader>u :GundoToggle<CR>
+map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
+map <Leader>go :GrepOptions<CR>
+map <Enter> o
+map ;; $
+map ; ^
 " ]]]
