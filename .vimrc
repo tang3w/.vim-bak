@@ -139,6 +139,8 @@ Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'tang3w/cscope.vim'
+Bundle 'wesleyche/SrcExpl'
 
 filetype plugin indent on
 " ]]]
@@ -192,6 +194,19 @@ autocmd Syntax * RainbowParenthesesLoadChevrons
  
 " [[[ Sparkup
 let g:sparkupExecuteMapping = '<C-e>'
+" ]]]
+
+" [[[ Cscope
+let g:cscope_cmd = '/usr/local/bin/cscope'
+" ]]]
+
+" [[[
+let g:SrcExpl_updateTagsCmd = s:ctags_path." --sort=foldcase -R ."
+let g:SrcExpl_pluginList = [ 
+    \"__Tag_List__", 
+    \"_NERD_tree_",
+    \"Source_Explorer"
+\]
 " ]]]
 
 colorscheme desert256
