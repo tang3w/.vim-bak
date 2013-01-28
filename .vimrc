@@ -66,6 +66,14 @@ set whichwrap=b,s,<,>,[,]
 " File type
 filetype off
 
+" No swap file
+set noswapfile
+
+" Fold enable
+set foldenable
+
+set wildmenu
+
 " [[[ Line number and background
 set number
 hi lineNr ctermfg=7 ctermbg=8
@@ -75,6 +83,10 @@ hi lineNr ctermfg=7 ctermbg=8
 autocmd Filetype vim setlocal comments-=:\" comments+=f:\"
 autocmd Filetype lua setlocal comments-=:-- comments+=f:--
 autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
+" ]]]
+
+" [[[ Auto source the .vimrc
+autocmd! BufWritePost .vimrc source ~/.vimrc
 " ]]]
 
 " [[[ Leader
@@ -126,6 +138,7 @@ Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on
 " ]]]
@@ -201,6 +214,9 @@ map <C-l> <C-w>l
 " Flake8
 autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 
+" For Powerline
+set laststatus=2
+
 nmap - <C-b>
 nmap = <C-f>
 
@@ -222,7 +238,7 @@ map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
-map <Enter> o
+map <Leader><Enter> o
 map ;; $
 map ; ^
 " ]]]

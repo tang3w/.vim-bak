@@ -245,7 +245,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     " highlight groups
     call <SID>X("Cursor", "708090", "f0e68c", "")
     call <SID>X("CursorColumn", "", "3d3d3d", "")
-    call <SID>X("CursorLine", "", "000000", "underline")
+    call <SID>X("CursorLine", "", "", "underline")
     "CursorIM
     "Directory
     "DiffAdd
