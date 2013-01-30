@@ -214,7 +214,7 @@ colorscheme desert256
 " [[[ Key mapping
 
 " Timeout length
-set timeoutlen=256
+set timeoutlen=99999
 
 map <Leader>h <C-w>h 
 map <Leader>j <C-w>j
@@ -237,11 +237,6 @@ nmap = <C-f>
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-map jj <Leader><Leader>j
-map kk <Leader><Leader>k
-map ff <Leader><Leader>f
-map FF <Leader><Leader>F
-map ww <Leader><Leader>w
 map // <Leader>c<Space>
 map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
@@ -253,7 +248,6 @@ map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
-map <Leader><Enter> o
-map ;; $
-map ; ^
+map <Leader>; ^
+map ; $
 " ]]]
