@@ -141,6 +141,7 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tang3w/cscope.vim'
 Bundle 'wesleyche/SrcExpl'
+Bundle 'xolox/vim-session'
 
 filetype plugin indent on
 " ]]]
@@ -232,9 +233,6 @@ autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 " For Powerline
 set laststatus=2
 
-nmap - <C-b>
-nmap = <C-f>
-
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
 map // <Leader>c<Space>
@@ -248,6 +246,4 @@ map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
-map <Leader>; ^
-map ; $
 " ]]]
