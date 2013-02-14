@@ -142,6 +142,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tang3w/cscope.vim'
 Bundle 'wesleyche/SrcExpl'
 Bundle 'xolox/vim-session'
+Bundle 'michaeljsmith/vim-indent-object'
 
 filetype plugin indent on
 " ]]]
