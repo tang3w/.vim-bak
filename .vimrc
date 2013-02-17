@@ -251,7 +251,11 @@ map <Leader>go :GrepOptions<CR>
 map <Leader>p %
 
 imap <expr> <C-g><C-y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
+imap <expr> <C-g><C-u> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
 imap <expr> <C-g><C-e> matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
+imap <expr> <C-g><C-d> matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
 imap <expr> <C-g>y matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
+imap <expr> <C-g>u matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
 imap <expr> <C-g>e matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
+imap <expr> <C-g>d matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
 " ]]]
