@@ -127,13 +127,11 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nvie/vim-flake8'
 Bundle 'vim-scripts/Pydiction'
 Bundle 'derekwyatt/vim-fswitch'
-"Bundle 'tang3w/YankRing.vim'
 Bundle 'vim-scripts/highlight.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'embear/vim-foldsearch'
 Bundle 'fs111/pydoc.vim'
-Bundle 'vim-scripts/MarkLines'
-Bundle 'tang3w/python_ifold'
+Bundle 'tang3w/jpythonfold.vim'
 Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
@@ -145,6 +143,8 @@ Bundle 'xolox/vim-session'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'guns/xterm-color-table.vim'
 
 filetype plugin indent on
 " ]]]
@@ -236,8 +236,16 @@ autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 " For Powerline
 set laststatus=2
 
+" For Indent Guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#800000 ctermbg=1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#008000 ctermbg=2
+
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
+map - <C-u>
+map + <C-d>
 map // <Leader>c<Space>
 map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
