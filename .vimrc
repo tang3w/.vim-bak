@@ -145,6 +145,7 @@ Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'vim-scripts/python_match.vim'
 
 filetype plugin indent on
 " ]]]
