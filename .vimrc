@@ -150,6 +150,7 @@ Bundle 'vim-scripts/python_match.vim'
 Bundle 'tang3w/wmgraphviz.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'tpope/vim-unimpaired'
 
 filetype plugin indent on
 " ]]]
