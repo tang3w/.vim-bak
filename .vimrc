@@ -38,6 +38,7 @@ set cinoptions=(sus
 
 " [[[ Highlight
 syntax on
+syntax enable
 set guifont=Monaco:h16
 set cursorcolumn
 set cursorline
@@ -146,6 +147,9 @@ Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'vim-scripts/python_match.vim'
+Bundle 'vim-scripts/wmgraphviz'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'myusuf3/numbers.vim'
 
 filetype plugin indent on
 " ]]]
@@ -214,6 +218,7 @@ let g:SrcExpl_pluginList = [
 \]
 " ]]]
 
+" Colorscheme
 colorscheme desert256
 
 " [[[ Key mapping
@@ -243,6 +248,14 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#800000 ctermbg=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#008000 ctermbg=2
 
+" For Wmgraphviz
+let g:WMGraphviz_output = 'svg'
+let g:WMGraphviz_viewer = 'open'
+autocmd FileType dot map <buffer> <F5> :GraphvizShow<CR>
+
+" For Numbers
+noremap <F2> :NumbersToggle<CR>
+
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
 map - <C-u>
@@ -258,6 +271,7 @@ map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
+nnoremap [<CR> i<CR><ESC>ko
 
 imap <expr> <C-g><C-y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
 imap <expr> <C-g><C-u> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
