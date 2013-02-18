@@ -147,7 +147,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'vim-scripts/python_match.vim'
-Bundle 'vim-scripts/wmgraphviz'
+Bundle 'tang3w/wmgraphviz.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'myusuf3/numbers.vim'
 
@@ -249,9 +249,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#800000 ctermbg=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#008000 ctermbg=2
 
 " For Wmgraphviz
-let g:WMGraphviz_output = 'svg'
+let g:WMGraphviz_output = 'pdf'
 let g:WMGraphviz_viewer = 'open'
-autocmd FileType dot map <buffer> <F5> :GraphvizShow<CR>
+autocmd BufWritePost *.dot :call GraphvizShow()
 
 " For Numbers
 noremap <F2> :NumbersToggle<CR>
