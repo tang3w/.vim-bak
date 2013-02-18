@@ -273,6 +273,7 @@ map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
 nnoremap [<CR> i<CR><ESC>ko
+nnoremap ]<CR> a<CR><ESC>ko
 
 imap <expr> <C-g><C-y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
 imap <expr> <C-g><C-u> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
