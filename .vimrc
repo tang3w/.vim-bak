@@ -274,27 +274,35 @@ map <Leader>go :GrepOptions<CR>
 map <Leader>p %
 
 function! s:CRDidClickInNormalMode()
-    silent! nunmap <buffer> <CR>
-    silent! nunmap <buffer> <Leader><CR>
-    silent! nunmap <buffer> [<CR>
-    silent! nunmap <buffer> ]<CR>
-
     if &modifiable
-        nnoremap <buffer> <CR> i<CR>
-        nnoremap <buffer> <Leader><CR> a<CR>
-        nnoremap <buffer> [<CR> i<CR><ESC>ko
-        nnoremap <buffer> ]<CR> a<CR><ESC>ko
+        execute "normal! i\<CR>"
+        startinsert
+    else
+        execute "normal! \<CR>"
     endif
 endfunction
 
-autocmd BufReadPost * call s:CRDidClickInNormalMode()
+command! TriggerKeyEnter :call s:CRDidClickInNormalMode()
 
-imap <expr> <C-g><C-y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
-imap <expr> <C-g><C-u> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
-imap <expr> <C-g><C-e> matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
-imap <expr> <C-g><C-d> matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
-imap <expr> <C-g>y matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
-imap <expr> <C-g>u matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
-imap <expr> <C-g>e matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
-imap <expr> <C-g>d matchstr(getline(line('.')+1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
+nnoremap <CR> :TriggerKeyEnter<CR>
+nmap <Leader><CR> a<CR>
+nmap [<CR> <CR><ESC>ko
+nmap ]<CR> a<CR><ESC>ko
+
+function! s:GetWordOfLine(line)
+    return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\w\+\s\=\|.\)')
+endfunction
+
+function! s:GetWORDOfLine(line)
+    return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\S\+\s\=\|.\)')
+endfunction
+
+imap <expr> <C-g><C-y> <SID>GetWordOfLine(line('.')-1)
+imap <expr> <C-g><C-u> <SID>GetWORDOfLine(line('.')-1)
+imap <expr> <C-g><C-e> <SID>GetWordOfLine(line('.')+1)
+imap <expr> <C-g><C-d> <SID>GetWORDOfLine(line('.')+1)
+imap <expr> <C-g>y <SID>GetWordOfLine(line('.')-1)
+imap <expr> <C-g>u <SID>GetWORDOfLine(line('.')-1)
+imap <expr> <C-g>e <SID>GetWordOfLine(line('.')+1)
+imap <expr> <C-g>d <SID>GetWORDOfLine(line('.')+1)
 " ]]]
