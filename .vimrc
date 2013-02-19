@@ -272,8 +272,22 @@ map <Leader>u :GundoToggle<CR>
 map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
-nnoremap [<CR> i<CR><ESC>ko
-nnoremap ]<CR> a<CR><ESC>ko
+
+function! s:CRDidClickInNormalMode()
+    silent! nunmap <buffer> <CR>
+    silent! nunmap <buffer> <Leader><CR>
+    silent! nunmap <buffer> [<CR>
+    silent! nunmap <buffer> ]<CR>
+
+    if &modifiable
+        nnoremap <buffer> <CR> i<CR>
+        nnoremap <buffer> <Leader><CR> a<CR>
+        nnoremap <buffer> [<CR> i<CR><ESC>ko
+        nnoremap <buffer> ]<CR> a<CR><ESC>ko
+    endif
+endfunction
+
+autocmd BufReadPost * call s:CRDidClickInNormalMode()
 
 imap <expr> <C-g><C-y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\s\=\\|.\)')
 imap <expr> <C-g><C-u> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\S\+\s\=\\|.\)')
