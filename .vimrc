@@ -151,6 +151,8 @@ Bundle 'tang3w/wmgraphviz.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'kana/vim-textobj-user'
+Bundle 'kana/vim-textobj-entire'
 
 filetype plugin indent on
 " ]]]
