@@ -153,6 +153,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
+Bundle 'tang3w/zencoding-vim'
 
 filetype plugin indent on
 " ]]]
@@ -263,7 +264,7 @@ nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
 map - <C-u>
 map + <C-d>
-map // <Leader>c<Space>
+map <Leader>// <Leader>c<Space>
 map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
 map <Leader>n :NERDTreeToggle<CR>
@@ -271,7 +272,7 @@ map <Leader>t :TlistToggle<CR>
 map <Leader>s :CtrlP<CR>
 map <Leader>be :BufExplorer<CR>
 map <Leader>u :GundoToggle<CR>
-map <Leader>g :exec ":Grep ".input("Grep: ")<CR>
+map <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
 map <Leader>go :GrepOptions<CR>
 map <Leader>p %
 
@@ -307,4 +308,42 @@ imap <expr> <C-g>y <SID>GetWordOfLine(line('.')-1)
 imap <expr> <C-g>u <SID>GetWORDOfLine(line('.')-1)
 imap <expr> <C-g>e <SID>GetWordOfLine(line('.')+1)
 imap <expr> <C-g>d <SID>GetWORDOfLine(line('.')+1)
+
+function! s:getchar()
+    let c = getchar()
+    if c =~ '^\d\+$'
+        let c = nr2char(c)
+    endif
+    return c
+endfunction
+
+function! s:inputtarget()
+    let c = s:getchar()
+    while c =~ '^\d\+$'
+        let c .= s:getchar()
+    endwhile
+    "if c == " "
+        "let c .= s:getchar()
+    "endif
+    if c =~ "\<Esc>\|\<C-C>\|\0"
+        return ""
+    else
+        return c
+    endif
+endfunction
+
+function! s:SplitCurrentLine(pat)
+    let t = getline(line('.'))
+    let t = tlib#string#TrimLeft(t)
+    let t = tlib#string#TrimRight(t)
+    let once = 1
+    execute "normal! ^C"
+    for text in split(t, a:pat)
+        execute 'normal! '.(once ? 'i' : 'o').text
+        if once | let once = 0 | endif
+    endfor
+endfunction
+
+nnoremap <silent> <Leader>; :call <SID>SplitCurrentLine(<SID>inputtarget())<CR>
+
 " ]]]
