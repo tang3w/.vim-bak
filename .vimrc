@@ -120,7 +120,7 @@ Bundle 'vim-scripts/Gundo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+"Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'jsedivy/vim-sparkup'
@@ -144,7 +144,7 @@ Bundle 'xolox/vim-session'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'godlygeek/tabular'
-Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Yggdroot/indentLine'
 Bundle 'guns/xterm-color-table.vim'
 Bundle 'vim-scripts/python_match.vim'
 Bundle 'tang3w/wmgraphviz.vim'
@@ -246,12 +246,6 @@ autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 " For Powerline
 set laststatus=2
 
-" For Indent Guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#800000 ctermbg=1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#008000 ctermbg=2
-
 " For Wmgraphviz
 let g:WMGraphviz_output = 'pdf'
 let g:WMGraphviz_viewer = 'open'
@@ -260,10 +254,19 @@ autocmd BufWritePost *.dot :call GraphvizShow()
 " For Numbers
 noremap <F2> :NumbersToggle<CR>
 
+" For SnipMate
+
+
+let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
+
+if filereadable(s:zc_settings_file)
+    let g:user_zen_settings = eval(join(readfile(s:zc_settings_file)))
+endif
+
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-map - <C-u>
-map + <C-d>
+" map - <C-u>
+" map + <C-d>
 map <Leader>// <Leader>c<Space>
 map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
@@ -322,9 +325,6 @@ function! s:inputtarget()
     while c =~ '^\d\+$'
         let c .= s:getchar()
     endwhile
-    "if c == " "
-        "let c .= s:getchar()
-    "endif
     if c =~ "\<Esc>\|\<C-C>\|\0"
         return ""
     else
