@@ -154,6 +154,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
+Bundle 'airblade/vim-gitgutter'
 
 filetype plugin indent on
 " ]]]
@@ -223,7 +224,7 @@ let g:SrcExpl_pluginList = [
 " ]]]
 
 " Colorscheme
-colorscheme desert256
+colorscheme Tomorrow-Night
 
 " [[[ Key mapping
 
