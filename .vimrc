@@ -155,6 +155,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'ciaranm/detectindent'
 
 filetype plugin indent on
 " ]]]
@@ -255,8 +256,11 @@ autocmd BufWritePost *.dot :call GraphvizShow()
 " For Numbers
 noremap <F2> :NumbersToggle<CR>
 
-" For SnipMate
+" For IndentLine
+let g:indentLine_indentLevel = 50
 
+" For DetectIndent
+autocmd BufReadPost * :DetectIndent
 
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
