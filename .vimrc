@@ -54,7 +54,7 @@ set ruler
 
 " [[[ Search rules
 set is
-set hls
+set hlsearch
 set ignorecase
 " ]]]
 
@@ -77,7 +77,6 @@ set wildmenu
 
 " [[[ Line number and background
 set number
-hi lineNr ctermfg=7 ctermbg=8
 " ]]]
 
 " [[[ Auto comment at next line
@@ -120,7 +119,6 @@ Bundle 'vim-scripts/Gundo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-"Bundle 'garbas/vim-snipmate'
 Bundle 'honza/snipmate-snippets'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'jsedivy/vim-sparkup'
@@ -128,7 +126,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'nvie/vim-flake8'
 Bundle 'vim-scripts/Pydiction'
 Bundle 'derekwyatt/vim-fswitch'
-Bundle 'vim-scripts/highlight.vim'
 Bundle 'kshenoy/vim-signature'
 Bundle 'embear/vim-foldsearch'
 Bundle 'fs111/pydoc.vim'
@@ -156,6 +153,7 @@ Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'ciaranm/detectindent'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 " ]]]
@@ -225,7 +223,14 @@ let g:SrcExpl_pluginList = [
 " ]]]
 
 " Colorscheme
-colorscheme Tomorrow-Night
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_contrast="low"
+let g:solarized_visibility="low"
+
+highlight clear SignColumn
 
 " [[[ Key mapping
 

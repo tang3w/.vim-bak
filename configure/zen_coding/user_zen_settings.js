@@ -14,7 +14,7 @@
     'vim': {
         'indent': '  ',
         'snippets': {
-            'fun': 'function ${1:name}(${2})${ntcn}endfunction',
+            'fun': 'function ${1:name}(${2})${ntcn}endfunction'
         }
     }
 }
