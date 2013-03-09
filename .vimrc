@@ -207,12 +207,14 @@ let g:cscope_cmd = '/usr/local/bin/cscope'
 " ]]]
 
 " Colorscheme
+if !has('gui_running')
+    let g:solarized_termtrans=1
+elseif
+    let g:solarized_termcolors=256
+endif
+
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-let g:solarized_termtrans=1
-let g:solarized_contrast="low"
-let g:solarized_visibility="low"
+silent! colorscheme solarized
 
 highlight clear SignColumn
 
