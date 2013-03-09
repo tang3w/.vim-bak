@@ -42,8 +42,8 @@ syntax enable
 set guifont=Monaco:h16
 set cursorcolumn
 set cursorline
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
+au BufLeave * set nocursorline nocursorcolumn
+au BufEnter * set cursorline cursorcolumn
 " ]]]
 
 " Backspace
@@ -153,6 +153,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'ciaranm/detectindent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wikitopian/hardmode'
+Bundle 'jszakmeister/vim-togglecursor'
+Bundle 'vim-scripts/lastpos.vim'
 
 filetype plugin indent on
 " ]]]
@@ -252,6 +254,9 @@ let g:indentLine_indentLevel = 50
 
 " For DetectIndent
 autocmd BufReadPost * :DetectIndent
+
+" For TagBar
+let g:tagbar_ctags_bin = s:ctags_path
 
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
