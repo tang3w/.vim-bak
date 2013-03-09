@@ -119,7 +119,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'honza/snipmate-snippets'
-Bundle 'jiangmiao/auto-pairs'
+Bundle 'Raimondi/delimitMate'
 Bundle 'jsedivy/vim-sparkup'
 Bundle 'scrooloose/syntastic'
 Bundle 'nvie/vim-flake8'
@@ -149,15 +149,18 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
-Bundle 'airblade/vim-gitgutter'
+Bundle 'mhinz/vim-signify'
 Bundle 'ciaranm/detectindent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wikitopian/hardmode'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'vim-scripts/lastpos.vim'
+Bundle 'vim-scripts/IndexedSearch'
 
 filetype plugin indent on
 " ]]]
+
+let g:signify_color_guibg=""
 
 " [[[ CtrlP
 let g:ctrlp_show_hidden = 1
