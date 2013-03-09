@@ -149,27 +149,27 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
-Bundle 'mhinz/vim-signify'
 Bundle 'ciaranm/detectindent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wikitopian/hardmode'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'vim-scripts/lastpos.vim'
 Bundle 'vim-scripts/IndexedSearch'
+Bundle 'mattn/calendar-vim'
+Bundle 'vim-scripts/camelcasemotion'
+Bundle 'chrisbra/color_highlight'
+Bundle 'mhinz/vim-signify'
 
 filetype plugin indent on
 " ]]]
 
-let g:signify_color_guibg=""
 
 " [[[ CtrlP
 let g:ctrlp_show_hidden = 1
 " ]]]
 
 " [[[ Neocomplcache
-" Launches neocomplcache automatically
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase
 let g:neocomplcache_enable_smart_case = 1
 " ]]]
 
@@ -196,7 +196,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 
 autocmd VimEnter * RainbowParenthesesToggle
-
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
@@ -252,11 +251,11 @@ autocmd BufWritePost *.dot :call GraphvizShow()
 " For Numbers
 noremap <F2> :NumbersToggle<CR>
 
-" For IndentLine
-let g:indentLine_indentLevel = 50
-
 " For DetectIndent
 autocmd BufReadPost * :DetectIndent
+
+" For IndentLine
+let g:indentLine_indentLevel = 50
 
 " For TagBar
 let g:tagbar_ctags_bin = s:ctags_path
@@ -269,17 +268,17 @@ endif
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-map <Leader>// <Leader>c<Space>
-map <Leader>a :FSHere<CR>
-map <Leader>r :MRU<CR>
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>t :TagbarToggle<CR>
-map <Leader>s :CtrlP<CR>
-map <Leader>be :BufExplorer<CR>
-map <Leader>u :GundoToggle<CR>
-map <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
-map <Leader>go :GrepOptions<CR>
-map <Leader>p %
+nnoremap <Leader># <Leader>c<Space>
+nnoremap <Leader>a :FSHere<CR>
+nnoremap <Leader>r :MRU<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>s :CtrlP<CR>
+nnoremap <Leader>be :BufExplorer<CR>
+nnoremap <Leader>u :GundoToggle<CR>
+nnoremap <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
+nnoremap <Leader>go :GrepOptions<CR>
+nnoremap <Leader>p %
 
 function! s:CRDidClickInNormalMode()
     if &modifiable
