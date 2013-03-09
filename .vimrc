@@ -106,12 +106,11 @@ Bundle 'gmarik/vundle'
 
 " Bundles
 Bundle 'Shougo/neocomplcache'
-Bundle 'vim-scripts/taglist.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tang3w/nerdcommenter'
 Bundle 'kien/ctrlp.vim'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'tmhedberg/matchit'
@@ -136,7 +135,6 @@ Bundle 'vim-scripts/mru.vim'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tang3w/cscope.vim'
-Bundle 'wesleyche/SrcExpl'
 Bundle 'xolox/vim-session'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
@@ -154,14 +152,9 @@ Bundle 'tang3w/zencoding-vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'ciaranm/detectindent'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'wikitopian/hardmode'
 
 filetype plugin indent on
-" ]]]
-
-" [[[ Taglist
-let Tlist_Ctags_Cmd = s:ctags_path
-let Tlist_Exit_OnlyWindow = 1 
-let Tlist_Use_Right_Window = 1
 " ]]]
 
 " [[[ CtrlP
@@ -211,15 +204,6 @@ let g:sparkupExecuteMapping = '<C-e>'
 
 " [[[ Cscope
 let g:cscope_cmd = '/usr/local/bin/cscope'
-" ]]]
-
-" [[[
-let g:SrcExpl_updateTagsCmd = s:ctags_path." --sort=foldcase -R ."
-let g:SrcExpl_pluginList = [ 
-    \"__Tag_List__", 
-    \"_NERD_tree_",
-    \"Source_Explorer"
-\]
 " ]]]
 
 " Colorscheme
@@ -275,13 +259,11 @@ endif
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
 
-" map - <C-u>
-" map + <C-d>
 map <Leader>// <Leader>c<Space>
 map <Leader>a :FSHere<CR>
 map <Leader>r :MRU<CR>
 map <Leader>n :NERDTreeToggle<CR>
-map <Leader>t :TlistToggle<CR>
+map <Leader>t :TagbarToggle<CR>
 map <Leader>s :CtrlP<CR>
 map <Leader>be :BufExplorer<CR>
 map <Leader>u :GundoToggle<CR>
