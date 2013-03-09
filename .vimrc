@@ -211,7 +211,7 @@ let g:cscope_cmd = '/usr/local/bin/cscope'
 " Colorscheme
 if !has('gui_running')
     let g:solarized_termtrans=1
-elseif
+else
     let g:solarized_termcolors=256
 endif
 
