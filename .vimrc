@@ -59,7 +59,8 @@ set ignorecase
 " ]]]
 
 " [[[ Wrap and break
-set nowrap
+set wrap
+let &showbreak="↪ "
 set linebreak
 set whichwrap=b,s,<,>,[,]
 " ]]]
