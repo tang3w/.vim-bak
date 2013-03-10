@@ -3,40 +3,35 @@
 
 " !!! Please move/link this file to your home directory.
 
-" [[[ Variables
-let s:ctags_path = '/usr/local/bin/ctags'
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-" ]]]
-
 " Be IMproved
 set nocompatible
 
-" [[[ Encoding
+" Variables
+let s:ctags_path = '/usr/local/bin/ctags'
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+
+" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
-" ucs-bom means utf-8 without bom
 set fileencodings=ucs-bom,utf-8,gb18030,cp936
 set langmenu=zh_CN.UTF-8
-" ]]]
 
-" [[[ Tab and space
+" Tab and space
 set smarttab
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
 " Display the 2-bytes character
 set ambiwidth=double
-" ]]]
 
-" [[[ Indent
+" Indent
 set cindent
 set autoindent
-" C/C++ indent style
 set cinoptions=(sus
-" ]]]
 
-" [[[ Highlight
+" Highlight
 syntax on
 syntax enable
 set guifont=Monaco:h16
@@ -44,7 +39,6 @@ set cursorcolumn
 set cursorline
 au BufLeave * set nocursorline nocursorcolumn
 au BufEnter * set cursorline cursorcolumn
-" ]]]
 
 " Backspace
 set backspace=indent,eol,start
@@ -52,18 +46,16 @@ set backspace=indent,eol,start
 " Ruler rules
 set ruler
 
-" [[[ Search rules
+" Search rules
 set is
 set hlsearch
 set ignorecase
-" ]]]
 
-" [[[ Wrap and break
+" Wrap and break
 set wrap
 let &showbreak="↪ "
 set linebreak
 set whichwrap=b,s,<,>,[,]
-" ]]]
 
 " File type
 filetype off
@@ -76,25 +68,21 @@ set foldenable
 
 set wildmenu
 
-" [[[ Line number and background
+" Line number and background
 set number
-" ]]]
 
-" [[[ Auto comment at next line
+" Auto comment at next line
 autocmd Filetype vim setlocal comments-=:\" comments+=f:\"
 autocmd Filetype lua setlocal comments-=:-- comments+=f:--
 autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
-" ]]]
 
-" [[[ Auto source the .vimrc
+" Auto source the .vimrc
 autocmd! BufWritePost .vimrc source ~/.vimrc
-" ]]]
 
-" [[[ Leader
+" Leader
 let mapleader = "l"
-" ]]]
 
-" [[[ Neobundle
+" Bundle
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/vundle/
     set runtimepath+='~/.vim/bundle/sparkup/vim/'
@@ -106,7 +94,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
@@ -133,7 +120,6 @@ Bundle 'tang3w/jpythonfold.vim'
 Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
-Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'tang3w/cscope.vim'
 Bundle 'xolox/vim-session'
@@ -153,7 +139,6 @@ Bundle 'tang3w/zencoding-vim'
 Bundle 'ciaranm/detectindent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wikitopian/hardmode'
-Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'vim-scripts/lastpos.vim'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'mattn/calendar-vim'
@@ -165,21 +150,26 @@ Bundle 'tpope/vim-abolish'
 Bundle 'paradigm/vim-multicursor'
 Bundle 'vim-scripts/SyntaxMotion.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tmhedberg/indent-motion'
+Bundle 'sjl/vitality.vim'
+Bundle 'tomtom/tinykeymap_vim'
+Bundle 'vim-scripts/tinymode.vim'
+"Bundle 'Shougo/neocomplcache'
 
 filetype plugin indent on
-" ]]]
 
+" Vitality
+let g:vitality_fix_cursor = 0
 
-" [[[ CtrlP
+" CtrlP
 let g:ctrlp_show_hidden = 1
-" ]]]
 
-" [[[ Neocomplcache
+" Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-" ]]]
 
-" [[[ Rainbow parentheses
+" Rainbow parentheses
+let g:rbpt_max = 16
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -196,25 +186,20 @@ let g:rbpt_colorpairs = [
     \ ['darkgreen',   'RoyalBlue3'],
     \ ['darkcyan',    'SeaGreen3'],
     \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
-let g:rbpt_max = 16
+    \ ['red',         'firebrick3']
+\ ]
 
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 autocmd Syntax * RainbowParenthesesLoadChevrons
-" ]]]
  
-" [[[ Sparkup
+" Sparkup
 let g:sparkupExecuteMapping = '<C-e>'
-" ]]]
 
-" [[[ Cscope
+" Cscope
 let g:cscope_cmd = '/usr/local/bin/cscope'
-" ]]]
 
 " Colorscheme
 if !has('gui_running')
@@ -228,52 +213,49 @@ silent! colorscheme solarized
 
 highlight clear SignColumn
 
-" [[[ Key mapping
-
-" Timeout length
+" Timeout
 set timeoutlen=99999
-
-map <Leader>h <C-w>h 
-map <Leader>j <C-w>j
-map <Leader>k <C-w>k
-map <Leader>l <C-w>l
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+map <Leader>h <C-w>h 
+map <Leader>j <C-w>j
+map <Leader>k <C-w>k
+map <Leader>l <C-w>l
 
 " Flake8
 autocmd FileType python map <buffer> <F7> :call Flake8()<CR>
 
-" For Powerline
+" Powerline
 set laststatus=2
 
-" For Wmgraphviz
+" Wmgraphviz
 let g:WMGraphviz_output = 'pdf'
 let g:WMGraphviz_viewer = 'open'
 autocmd BufWritePost *.dot :call GraphvizShow()
 
-" For Numbers
+" Numbers
 noremap <F2> :NumbersToggle<CR>
 
-" For DetectIndent
+" DetectIndent
 autocmd BufReadPost * :DetectIndent
 
-" For IndentLine
-let g:indentLine_indentLevel = 50
+" IndentLine
+let g:indentLine_indentLevel = 10
 
-" For TagBar
+" TagBar
 let g:tagbar_ctags_bin = s:ctags_path
 
-" For MutipleCursor
+" MutipleCursor
+let g:multicursor_quit = "<Leader>mq"
 nnoremap <Leader>ms :<c-u>call MultiCursorSearch('')<cr>
 nnoremap <Leader>mw :<c-u>call MultiCursorSearch('<c-r><c-w>')<cr>
 nnoremap <Leader>mc :<c-u>call MultiCursorPlaceCursor()<cr>
 nnoremap <Leader>mm :<c-u>call MultiCursorManual()<cr>
 nnoremap <Leader>mu :<c-u>call MultiCursorRemoveCursors()<cr>
 xnoremap <Leader>mc :<c-u>call MultiCursorVisual()<cr>
-let g:multicursor_quit = "<Leader>mq"
 
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
@@ -289,7 +271,7 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 nnoremap <silent> <Leader>s :CtrlP<CR>
 nnoremap <silent> <Leader>be :BufExplorer<CR>
 nnoremap <silent> <Leader>u :GundoToggle<CR>
-nnoremap <silent> <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
+nnoremap <silent> <Leader>gr :execute ":silent! Grep ".input("Grep: ")<CR>
 nnoremap <silent> <Leader>go :GrepOptions<CR>
 nnoremap <silent> <Leader>p %
 
@@ -305,9 +287,37 @@ endfunction
 command! TriggerKeyEnter :call s:CRDidClickInNormalMode()
 
 nnoremap <CR> :TriggerKeyEnter<CR>
-nmap <Leader><CR> a<CR>
-nmap [<CR> <CR><ESC>ko
-nmap ]<CR> a<CR><ESC>ko
+nnoremap <Leader><CR> a<CR>
+nnoremap [<CR> <CR><ESC>ko
+nnoremap ]<CR> a<CR><ESC>ko
+
+call tinymode#EnterMap("HJKL", "<Leader>l")
+call tinymode#Map("HJKL", "w", "normal! k")
+call tinymode#Map("HJKL", "a", "normal! h")
+call tinymode#Map("HJKL", "s", "normal! j")
+call tinymode#Map("HJKL", "d", "normal! l")
+
+function! s:NextNonBlankLnum()
+    let lnum = line('.') + 1
+    while lnum <= line('$')
+        if match(getline(lnum), '^\s*$') < 0
+            return lnum
+        endif
+        let lnum = lunm + 1
+    endwhile
+    return 0
+endfunction
+
+function! s:PrevNonBlankLnum()
+    let lnum = line('.') - 1
+    while lnum > 0
+        if match(getline(lnum), '^\s*$') < 0
+            return lnum
+        endif
+        let lnum = lnum - 1
+    endwhile
+    return 0
+endfunction
 
 function! s:GetWordOfLine(line)
     return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\w\+\s\=\|.\)')
@@ -317,47 +327,11 @@ function! s:GetWORDOfLine(line)
     return matchstr(getline(a:line), '\%'.virtcol('.').'v\%(\S\+\s\=\|.\)')
 endfunction
 
-imap <expr> <C-g><C-y> <SID>GetWordOfLine(line('.')-1)
-imap <expr> <C-g><C-u> <SID>GetWORDOfLine(line('.')-1)
-imap <expr> <C-g><C-e> <SID>GetWordOfLine(line('.')+1)
-imap <expr> <C-g><C-d> <SID>GetWORDOfLine(line('.')+1)
-imap <expr> <C-g>y <SID>GetWordOfLine(line('.')-1)
-imap <expr> <C-g>u <SID>GetWORDOfLine(line('.')-1)
-imap <expr> <C-g>e <SID>GetWordOfLine(line('.')+1)
-imap <expr> <C-g>d <SID>GetWORDOfLine(line('.')+1)
-
-function! s:getchar()
-    let c = getchar()
-    if c =~ '^\d\+$'
-        let c = nr2char(c)
-    endif
-    return c
-endfunction
-
-function! s:inputtarget()
-    let c = s:getchar()
-    while c =~ '^\d\+$'
-        let c .= s:getchar()
-    endwhile
-    if c =~ "\<Esc>\|\<C-C>\|\0"
-        return ""
-    else
-        return c
-    endif
-endfunction
-
-function! s:SplitCurrentLine(pat)
-    let t = getline(line('.'))
-    let t = tlib#string#TrimLeft(t)
-    let t = tlib#string#TrimRight(t)
-    let once = 1
-    execute "normal! ^C"
-    for text in split(t, a:pat)
-        execute 'normal! '.(once ? 'i' : 'o').text
-        if once | let once = 0 | endif
-    endfor
-endfunction
-
-nnoremap <silent> <Leader>; :call <SID>SplitCurrentLine(<SID>inputtarget())<CR>
-
-" ]]]
+imap <expr> <C-g><C-y> <SID>GetWordOfLine(<SID>PrevNonBlankLnum())
+imap <expr> <C-g><C-u> <SID>GetWORDOfLine(<SID>PrevNonBlankLnum())
+imap <expr> <C-g><C-e> <SID>GetWordOfLine(<SID>NextNonBlankLnum())
+imap <expr> <C-g><C-d> <SID>GetWORDOfLine(<SID>NextNonBlankLnum())
+imap <expr> <C-g>y <SID>GetWordOfLine(<SID>PrevNonBlankLnum())
+imap <expr> <C-g>u <SID>GetWORDOfLine(<SID>PrevNonBlankLnum())
+imap <expr> <C-g>e <SID>GetWordOfLine(<SID>NextNonBlankLnum())
+imap <expr> <C-g>d <SID>GetWORDOfLine(<SID>NextNonBlankLnum())
