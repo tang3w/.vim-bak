@@ -159,6 +159,10 @@ Bundle 'mattn/calendar-vim'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'chrisbra/color_highlight'
 Bundle 'mhinz/vim-signify'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-abolish'
+Bundle 'paradigm/vim-multicursor'
+Bundle 'vim-scripts/SyntaxMotion.vim'
 
 filetype plugin indent on
 " ]]]
@@ -260,6 +264,15 @@ let g:indentLine_indentLevel = 50
 " For TagBar
 let g:tagbar_ctags_bin = s:ctags_path
 
+" For MutipleCursor
+nnoremap <Leader>ms :<c-u>call MultiCursorSearch('')<cr>
+nnoremap <Leader>mw :<c-u>call MultiCursorSearch('<c-r><c-w>')<cr>
+nnoremap <Leader>mc :<c-u>call MultiCursorPlaceCursor()<cr>
+nnoremap <Leader>mm :<c-u>call MultiCursorManual()<cr>
+nnoremap <Leader>mu :<c-u>call MultiCursorRemoveCursors()<cr>
+xnoremap <Leader>mc :<c-u>call MultiCursorVisual()<cr>
+let g:multicursor_quit = "<Leader>mq"
+
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
 if filereadable(s:zc_settings_file)
@@ -267,18 +280,16 @@ if filereadable(s:zc_settings_file)
 endif
 
 nnoremap <silent> <Leader>/ :nohlsearch<CR>
-
-nnoremap <Leader># <Leader>c<Space>
-nnoremap <Leader>a :FSHere<CR>
-nnoremap <Leader>r :MRU<CR>
-nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>t :TagbarToggle<CR>
-nnoremap <Leader>s :CtrlP<CR>
-nnoremap <Leader>be :BufExplorer<CR>
-nnoremap <Leader>u :GundoToggle<CR>
-nnoremap <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
-nnoremap <Leader>go :GrepOptions<CR>
-nnoremap <Leader>p %
+nnoremap <silent> <Leader>a :FSHere<CR>
+nnoremap <silent> <Leader>r :MRU<CR>
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>s :CtrlP<CR>
+nnoremap <silent> <Leader>be :BufExplorer<CR>
+nnoremap <silent> <Leader>u :GundoToggle<CR>
+nnoremap <silent> <Leader>g :execute ":silent! Grep ".input("Grep: ")<CR>
+nnoremap <silent> <Leader>go :GrepOptions<CR>
+nnoremap <silent> <Leader>p %
 
 function! s:CRDidClickInNormalMode()
     if &modifiable
