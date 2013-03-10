@@ -163,6 +163,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-abolish'
 Bundle 'paradigm/vim-multicursor'
 Bundle 'vim-scripts/SyntaxMotion.vim'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on
 " ]]]
