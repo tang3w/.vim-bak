@@ -60,25 +60,3 @@ After download the latest version,
 extract the tarball and then install:
 
     sudo python setup.py install
-
-### 3\. Jedi
-
-Jedi is an autocompletion tool for Python.
-Jedi.vim is based on it. You can install it
-through pip or manually. For pip:
-
-    sudo pip install jedi
-
-Or, you can fetch the current develop version:
-
-    sudo pip install -e git://github.com/davidhalter/jedi.git#egg=jedi
-
-To manually, download the package from
-[Jedi](https://github.com/davidhalter/jedi/archive/master.zip)
-navigate indo the directory and execute:
-
-    sudo python setup.py install
-
-For more infomation about Jedi, please go to
-the documentation:
-[readthedoc](https://jedi.readthedocs.org/en/latest/docs/installation.html)
