@@ -1,9 +1,8 @@
 " Vim configuration
 " Author by Tang Tianyong
+" Please move or link this file to your home directory.
 
-" !!! Please move/link this file to your home directory.
-
-" Be IMproved
+" Be improved
 set nocompatible
 
 " Variables
@@ -16,6 +15,9 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gb18030,cp936
 set langmenu=zh_CN.UTF-8
 
+" Ruler rules
+set ruler
+
 " Tab and space
 set smarttab
 set expandtab
@@ -23,7 +25,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-" Display the 2-bytes character
+" Display 2-bytes character
 set ambiwidth=double
 
 " Indent
@@ -43,9 +45,6 @@ au BufEnter * set cursorline cursorcolumn
 " Backspace
 set backspace=indent,eol,start
 
-" Ruler rules
-set ruler
-
 " Search rules
 set is
 set hlsearch
@@ -57,6 +56,9 @@ let &showbreak="↪ "
 set linebreak
 set whichwrap=b,s,<,>,[,]
 
+" Break at multi-byte character
+set formatoptions+=mM
+
 " File type
 filetype off
 
@@ -66,6 +68,7 @@ set noswapfile
 " Fold enable
 set foldenable
 
+" Show command list
 set wildmenu
 
 " Line number and background
@@ -79,7 +82,7 @@ autocmd Filetype c,cpp setlocal comments-=:// comments+=f://
 " Auto source the .vimrc
 autocmd! BufWritePost .vimrc source ~/.vimrc
 
-" Leader
+" Leader key
 let mapleader = "l"
 
 " Bundle
@@ -106,7 +109,6 @@ Bundle 'vim-scripts/Gundo'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
 Bundle 'Raimondi/delimitMate'
 Bundle 'jsedivy/vim-sparkup'
 Bundle 'scrooloose/syntastic'
@@ -144,7 +146,7 @@ Bundle 'vim-scripts/IndexedSearch'
 Bundle 'mattn/calendar-vim'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'chrisbra/color_highlight'
-Bundle 'mhinz/vim-signify'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-abolish'
 Bundle 'paradigm/vim-multicursor'
@@ -152,9 +154,12 @@ Bundle 'vim-scripts/SyntaxMotion.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tmhedberg/indent-motion'
 Bundle 'sjl/vitality.vim'
-Bundle 'tomtom/tinykeymap_vim'
 Bundle 'vim-scripts/tinymode.vim'
-"Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
+Bundle 'bronson/vim-ruby-block-conv'
 
 filetype plugin indent on
 
@@ -256,6 +261,11 @@ nnoremap <Leader>mc :<c-u>call MultiCursorPlaceCursor()<cr>
 nnoremap <Leader>mm :<c-u>call MultiCursorManual()<cr>
 nnoremap <Leader>mu :<c-u>call MultiCursorRemoveCursors()<cr>
 xnoremap <Leader>mc :<c-u>call MultiCursorVisual()<cr>
+
+" Ruby-vim
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
