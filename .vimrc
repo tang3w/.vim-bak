@@ -160,6 +160,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'bronson/vim-ruby-block-conv'
+Bundle 'vim-scripts/phpfolding.vim'
 
 filetype plugin indent on
 
