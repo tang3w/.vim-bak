@@ -162,6 +162,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'vim-scripts/phpfolding.vim'
 Bundle 'StanAngeloff/php.vim'
+Bundle 'shawncplus/phpcomplete.vim'
 
 filetype plugin indent on
 
