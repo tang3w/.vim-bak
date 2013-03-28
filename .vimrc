@@ -138,7 +138,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'tang3w/zencoding-vim'
-Bundle 'ciaranm/detectindent'
+Bundle 'tang3w/detectindent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'wikitopian/hardmode'
 Bundle 'vim-scripts/lastpos.vim'
@@ -161,6 +161,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-endwise'
 Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'vim-scripts/phpfolding.vim'
+Bundle 'StanAngeloff/php.vim'
 
 filetype plugin indent on
 
@@ -267,6 +268,9 @@ xnoremap <Leader>mc :<c-u>call MultiCursorVisual()<cr>
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+" PHP
+let g:detectindent_preferred_tabstop = 4
 
 let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
 
