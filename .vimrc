@@ -109,6 +109,7 @@ Bundle 'embear/vim-foldsearch'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'vim-scripts/argtextobj.vim'
@@ -135,12 +136,14 @@ Bundle 'tmhedberg/indent-motion'
 Bundle 'vim-scripts/tinymode.vim'
 Bundle 'kballenegger/vim-autoreadwatch'
 Bundle 'Shougo/neocomplcache'
+Bundle 'guyht/vim-task'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'bronson/vim-ruby-block-conv'
 Bundle 'tpope/vim-endwise'
 Bundle 'tang3w/wmgraphviz.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'csexton/jekyll.vim'
 
 filetype plugin indent on
 
@@ -237,6 +240,9 @@ if filereadable(s:zc_settings_file)
     let g:user_zen_settings = eval(join(readfile(s:zc_settings_file)))
 endif
 
+" vim-task
+autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks setfiletype task
+
 " Copy previous or next nonblank line
 function! s:NextNonBlankLnum()
     let lnum = line('.') + 1
@@ -301,3 +307,9 @@ call tinymode#Map("tinymode-k", "h", "normal! h")
 call tinymode#Map("tinymode-k", "j", "normal! j")
 call tinymode#Map("tinymode-k", "k", "normal! k")
 call tinymode#Map("tinymode-k", "l", "normal! l")
+
+" Jekyll
+let g:jekyll_path = "~/Workspace/Repository/tang3w.github.com"
+map <Leader>jb  :JekyllBuild<CR>
+map <Leader>jn  :JekyllPost<CR>
+map <Leader>jl  :JekyllList<CR>
