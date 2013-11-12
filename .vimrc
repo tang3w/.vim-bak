@@ -116,23 +116,19 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kana/vim-textobj-entire'
-Bundle 'tang3w/zencoding-vim'
 Bundle 'tang3w/detectindent'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'wikitopian/hardmode'
 Bundle 'vim-scripts/lastpos.vim'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/camelcasemotion'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-abolish'
-Bundle 'paradigm/vim-multicursor'
 Bundle 'vim-scripts/SyntaxMotion.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tmhedberg/indent-motion'
 Bundle 'kballenegger/vim-autoreadwatch'
 Bundle 'Shougo/neocomplcache'
-Bundle 'guyht/vim-task'
 
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'bronson/vim-ruby-block-conv'
@@ -144,8 +140,9 @@ Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 
-" Session
+" Vim session
 let g:session_autosave = 'yes'
+let g:session_autoload = 'no'
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
@@ -213,29 +210,10 @@ map <Leader>j <C-w>j
 map <Leader>k <C-w>k
 map <Leader>l <C-w>l
 
-" MutipleCursor
-let g:multicursor_quit = "<Leader>mq"
-nnoremap <Leader>ms :<c-u>call MultiCursorSearch('')<cr>
-nnoremap <Leader>mw :<c-u>call MultiCursorSearch('<c-r><c-w>')<cr>
-nnoremap <Leader>mc :<c-u>call MultiCursorPlaceCursor()<cr>
-nnoremap <Leader>mm :<c-u>call MultiCursorManual()<cr>
-nnoremap <Leader>mu :<c-u>call MultiCursorRemoveCursors()<cr>
-xnoremap <Leader>mc :<c-u>call MultiCursorVisual()<cr>
-
 " Ruby-vim
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-" ZenCoding
-let s:zc_settings_file = expand('~/.vim/configure/zen_coding/user_zen_settings.js')
-
-if filereadable(s:zc_settings_file)
-    let g:user_zen_settings = eval(join(readfile(s:zc_settings_file)))
-endif
-
-" vim-task
-autocmd BufNewFile,BufRead todo.txt,*.task,*.tasks setfiletype task
 
 " Copy previous or next nonblank line
 function! s:NextNonBlankLnum()
@@ -289,10 +267,8 @@ nnoremap <silent> <Leader>gr :execute ":silent! Grep ".input("Grep: ")<CR>
 nnoremap <silent> <Leader>go :GrepOptions<CR>
 nnoremap <silent> <Leader>m %
 nnoremap <silent> <Leader>s :w<CR>
-nnoremap <silent> <Leader><Leader>s :w!<CR>
 
 " Jekyll
 let g:jekyll_path = "~/Workspace/Repository/tang3w.github.com"
-map <Leader>jb  :JekyllBuild<CR>
-map <Leader>jn  :JekyllPost<CR>
+map <Leader>jp  :JekyllPost<CR>
 map <Leader>jl  :JekyllList<CR>
