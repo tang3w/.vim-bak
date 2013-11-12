@@ -25,8 +25,8 @@ set cinoptions=(sus
 set ambiwidth=double
 
 " Syntax
-syntax on
 syntax enable
+syntax on
 
 " Highlight current column and line
 set cursorcolumn
@@ -71,9 +71,6 @@ set ruler
 
 " Auto source the .vimrc
 autocmd! BufWritePost .vimrc source ~/.vimrc
-
-" Leader key
-let mapleader = "l"
 
 " Close file type
 filetype off
@@ -133,7 +130,6 @@ Bundle 'paradigm/vim-multicursor'
 Bundle 'vim-scripts/SyntaxMotion.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tmhedberg/indent-motion'
-Bundle 'vim-scripts/tinymode.vim'
 Bundle 'kballenegger/vim-autoreadwatch'
 Bundle 'Shougo/neocomplcache'
 Bundle 'guyht/vim-task'
@@ -144,6 +140,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tang3w/wmgraphviz.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'csexton/jekyll.vim'
+Bundle 'msanders/snipmate.vim'
 
 filetype plugin indent on
 
@@ -189,9 +186,6 @@ let g:sparkupExecuteMapping='<C-e>'
 
 " Colorscheme
 silent! colorscheme Tomorrow-Night
-
-" Timeout
-set timeoutlen=99999
 
 " Powerline
 set laststatus=2
@@ -296,17 +290,6 @@ nnoremap <silent> <Leader>go :GrepOptions<CR>
 nnoremap <silent> <Leader>m %
 nnoremap <silent> <Leader>s :w<CR>
 nnoremap <silent> <Leader><Leader>s :w!<CR>
-
-" Tinymode
-call tinymode#EnterMap("tinymode-k", "k")
-call tinymode#Map("tinymode-k", "w", "wincmd k")
-call tinymode#Map("tinymode-k", "a", "wincmd h")
-call tinymode#Map("tinymode-k", "s", "wincmd j")
-call tinymode#Map("tinymode-k", "d", "wincmd l")
-call tinymode#Map("tinymode-k", "h", "normal! h")
-call tinymode#Map("tinymode-k", "j", "normal! j")
-call tinymode#Map("tinymode-k", "k", "normal! k")
-call tinymode#Map("tinymode-k", "l", "normal! l")
 
 " Jekyll
 let g:jekyll_path = "~/Workspace/Repository/tang3w.github.com"
