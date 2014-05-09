@@ -77,7 +77,6 @@ filetype off
 
 " Vundle
 set runtimepath+=~/.vim/bundle/vundle/
-set runtimepath+='~/.vim/bundle/sparkup/vim/'
 
 call vundle#rc()
 
@@ -85,6 +84,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
+Bundle 'mattn/webapi-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
@@ -98,7 +98,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'jsedivy/vim-sparkup'
+Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'derekwyatt/vim-fswitch'
 Bundle 'kshenoy/vim-signature'
@@ -177,10 +177,10 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 autocmd Syntax * RainbowParenthesesLoadChevrons
- 
-" Sparkup
-let g:sparkupExecuteMapping='<C-e>'
 
+" Emmet user setting
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/emmet_snippets.json')), "\n"))
+ 
 " Colorscheme
 silent! colorscheme Tomorrow-Night
 
